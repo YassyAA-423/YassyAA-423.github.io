@@ -19,10 +19,13 @@ html {
     scroll-behavior: smooth;
 }
 
-
 /*BODY*/
 body {
     margin: 0;
+}
+
+.body.fade-out {
+    opacity: .1;
 }
 
 /*H1 ELEMENTS*/
@@ -38,15 +41,6 @@ h1 {
     /*This will make the hover effect ease in when the cursor goes away*/
 }
 
-
-/*H1 ELEMENTS HOVER EFFECT*/
-/****
-h1:hover {
-    filter: hue-rotate(90deg); /*This will make the h1 sepia
-    transform: scale(1.1); /*Will increase the size by 1.1 when hovered over
-    transition: 0.5s ease-in; /*This will make the hover effect ease in when the cursor goes over it
-}
-****/
 
 /*Styling for portfolio title text*/
 .white-text {
@@ -152,7 +146,7 @@ q {
 
 /*image elements*/
 
-img {
+.image {
     filter: grayscale(75%);
     /*This will rid 75% of the img color*/
     border-radius: 8px;
@@ -166,7 +160,7 @@ img {
     transition: 1s ease-in;
 }
 
-img:hover {
+.image:hover {
     filter: grayscale(5%);
     /*Bring most of the img's color back when hover*/
     transition: .8s ease-in;
@@ -175,6 +169,12 @@ img:hover {
     /*slightly increase the image when hovered */
 }
 
+/*Slideshow images*/
+.Image{
+    width: 600px !important;
+    height: 617px !important;
+    border-radius: 0px 0px 7px 7px;
+}
 
 /*Media to apply to different media.types of devices*/
 /*For screens 576px and smaller: the images will be 100px tall and vertically in the columns*/
@@ -190,6 +190,7 @@ img:hover {
 footer {
     padding: 2%;
     background-color: #94b395;
+    margin-top: -19px;
 }
 
 /*NAVBAR Styling*/
@@ -339,13 +340,174 @@ footer {
 }
 
 /*END of Video styling*/
+
+/***Slideshow Styling***/
+#Slideshow_Background {
+    background: rgba(14, 40, 22, 0.8);
+}
+
+.mySlides {
+    display: none;
+    /*This will prevent the images from being displayed, JavaScript will be used to display these*/
+}
+
+/*Slideshow Sec / Container*/
+#Slideshow_Container {
+    width: 39.5vw;
+    /*Relative sizing of the container for the slideshow set 39.5 of the viewport width*/
+    height: auto;
+    /*The height of the container is auto adjusted based on the content it is displaying*/
+    padding-top: 4%;
+    /*Adds a small padding to the top of the slideshow container*/
+    position: relative;
+    /*Thie sets the container relative to its normal positioning*/
+    margin: auto;
+    /*This will horizontally center the container on the pager*/
+}
+
+/*Removes the underline from the previous and next buttons on the slideshow*/
+#Slideshow_Container a {
+    text-decoration: none;
+}
+
+/*Images contained within the slideshow*/
+.Slideshow_Images {
+    /*This will center the images vertically with the slideshow container*/
+    height: auto;
+    /*Height of the images is auto adjusted based on the content, ie if your images are different sizes, they will display as different sizes*/
+    box-shadow: 0px 5px 10px 12px rgba(14, 40, 22, 0.8);
+    /*Adds a shadow around the slideshow images*/
+    width: 100%;
+    /*The width of the images is auto adjusted based on the content*/
+    background-color: #94b395;
+      filter: grayscale(65%);
+    /*This will rid 75% of the img color*/
+    display: block;
+    transition: 1s ease-in
+}
+
+.Slideshow_Images:hover{
+    filter: grayscale(5%);
+    /*This will rid 75% of the img color*/
+    display: block;
+    transition: 1s ease-in;
+}
+
+.Previous,
+.Next {
+    cursor: pointer;
+    /*Changes the mouse to a pointer when the buttons are selected*/
+    position: absolute;
+    /*This makes the next and previous buttons position relative to the slideshow container*/
+    top: 50%;
+    /*This moves the buttons up in the slidesshow contianer*/
+    width: auto;
+    /*This width of the bittons is auto adjusted based on the content*/
+    padding: 2vw;
+    /*adds padding equal to 2% of the viewport width*/
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    /*Adds a slightly rounded border on the top and bottom right corners*/
+    user-select: none;
+    /*This property makes it so that the user cannot highlight the text*/
+    transition: 0.6s ease;
+    /*This specifies the details of the hover transition for these elements*/
+}
+
+/*Position the next button on the right hand side*/
+.Next {
+    right: 0;
+    /*This moves the next button to the right side of the slideshow*/
+    border-radius: 3px 0 0 3px;
+    /*This changes the border radius on the next button to the top and bottom left of the button*/
+}
+
+/*Hover effect on the slide show buttons*/
+.Previous:hover,
+.Next:hover {
+    background-color: rgba(0, 0, 0, .8);
+    /*Make the background of the arrows a transparent gray color*/
+    color: white;
+    /*Makes the arrows white when hovered over*/
+}
+
+/*Slideshow text*/
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    /*This ensures the text is positioned within the image*/
+    bottom: 0;
+    /*This property sets the text at the bottom of the image*/
+    width: 100%;
+    /*The element covers the full width of image*/
+    text-align: center;
+    /*The text is center aligned within the image*/
+    font-family: "Story Script", sans-serif;
+    font-size: 1.5vw;
+    /*Font size is relative to the size of the viewport widith*/
+    background-color: rgba(14, 40, 22, 0.8);
+    /*Gives a slightly transparent black background*/
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+    /*Gives the text background rounded corners on the bottom left and right corners*/
+}
+
+/*Styling of the dots under the slideshow*/
+.dot {
+    cursor: pointer;
+    /*The cursor changes to pointer when hovered over the dots*/
+    height: 1vw;
+    /*The dots are sized relative to the viewport width*/
+    width: 1vw;
+    margin: .25vw;
+    /*adds additional spacing between the dots*/
+    background-color: white;
+    /*Makes te dots white*/
+    border-radius: 50%;
+    /*Makes the dot cirles by rounding each corner*/
+    display: inline-block;
+    /*Allows the dots to sit next to eachother rather than on a new line*/
+    transition: background-color 0.6s ease;
+    /*When clicked on the dots transition to a different color when clicked or hovered over (The affect is defined below)*/
+    z-index: 1;
+    /*This ensures the dots will be displated above any other elements*/
+}
+
+/*Hover effects for the slideshow dots*/
+.active,
+.dot:hover {
+    background-color: black;
+    /*Sets the color of the dots when active or hovered over*/
+}
+
+.fade {
+    animation-name: fade; /* Fade animation is defined below */
+    animation-duration: 1.5s; /* The animation lasts 1.5 seconds */
+    -webkit-animation-name: fade; /* Same as above for Safari 4.0-8.0 */
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;} /* Image starts transparent */
+    to {opacity: 1;} /* Image ends opaque */
+}
+
+@keyframes fade {
+    from {opacity: .4;} /* Image starts transparent */
+    to {opacity: 1;} /* Image ends opaque */
+}
+
+
+/***End Slideshow Styling***/
 /*Table styling-this section covers the styling of the columns and rows within the table*/
 /* The asterisk is a universal selector that applies this effect to all elements on the page */
 * {
     box-sizing: border-box;
     /* This creates a box with a border within which we will place most of our text */
 }
-
 
 .column_1 {
     float: left;
@@ -358,13 +520,6 @@ footer {
     background-color: #f0fdf0;
 }
 
-/* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
-@media screen and (max-width: 576px) {
-    .column_1 {
-        overflow: auto;
-    }
-}
-
 .column_2 {
     float: left;
     width: 50%;
@@ -374,35 +529,6 @@ footer {
     background-color: rgba(2, 62, 25, 0.8);
 }
 
-
-.column_3 {
-    float: left;
-    width: 50%;
-    /* This ensures the column takes up half of the page width */
-    padding: 10px;
-    padding-top: 1.9%;
-    /* This ensures there is space between the top of the column and our headings */
-    height: 400px;
-    background-color: #f0fdf0;
-    padding-bottom: 30%;
-}
-
-
-.column_4 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    padding-top: 1.9%;
-    padding-bottom: 30%;
-    height: 400px;
-    background-color: rgba(2, 62, 25, 0.8);
-}
-
-/* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
-.column_tall {
-    padding-top: 3.5%;
-    height: 450px;
-}
 
 /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
 .row::after {
@@ -417,11 +543,81 @@ footer {
 /*The END OF TABLE STYLING*/
 
 
-/*CONTACT STYLING*/
-input[type=text],
-input[type=email] {
+/*CONTACT FORM STYLING*/
+.Pop_Up_Button {
+    position: fixed;
+    /*The element is positioned relative to the viewport and stays in the same location no matter what*/
+    bottom: 1.75vw;
+    /*Positions the button slightly up from the bottom of the viewport*/
+    right: 1.75vw;
+    /*Positions the viewport slightly right from the side of the viewport*/
+    width: 25vw;
+    /*Set the relative to the viewport width*/
+    background-color: white;
+    /*Sets the background color of the button to white*/
+    color: black;
+    /*Sets the color text to black*/
+    border: solid black;
+    /* This make a solid black border around the button*/
+    cursor: pointer;
+    /*This changes the cursor when hovered over the button to a pointer*/
+    -webkit-animation: movePopup 5s;
+    /*Animation for 5 seconds for Safari 4.0 - 8.0*/
+    animation: movePopup 5s;
+    /*Animation set for 5 seconds*/
+}
+
+/*movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport*/
+@keyframes movePopup {
+    from {
+        right: -40vw;
+    }
+
+    to {
+        right: 1.75vw;
+    }
+}
+
+@-webkit-keyframes movePopup {
+    from {
+        right: -40vw;
+    }
+
+    to {
+        right: 1.75vw;
+    }
+}
+
+/*Styling for the contact form*/
+.form-popup {
+    z-index: 8;
+    /*This z-index ensures the contact form shows above all other elements on the pages*/
+    display: none;
+    /*Set the display to none, we will use JavaScript to show the contact form*/
+    position: fixed;
+    /*The form stays in the smae location no matter what*/
+    bottom: .5vw;
+    /*Slightly ip from the bottom of the viewport*/
+    right: .5vw;
+    /*Slightly in the from right side of the viewport*/
+}
+
+/*Form Styling*/
+.form-container {
+    max-width: 49vw;
+    /*Relative sizing of the form container - 49% of the viewport width*/
+    padding: 1vw;
+    /*adds padding between the form-popup and the form-container*/
+    background-color: #94b395;
+    margin-right: -5px;
+}
+
+/*Input Fields*/
+.form-container input[type=text] {
     width: 100%;
-    padding: 12px;
+    /*The input boxes completely fill the width of the form-container*/
+    padding: .93vw;
+    /*Adds padding to the input boxes*/
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -429,12 +625,69 @@ input[type=email] {
     margin-bottom: 16px;
     resize: vertical;
     font-family: "Story Script", sans-serif;
+    font-size: 1vw;
 }
 
-input[type=text]:hover,
-input[type=email]:hover {
-    box-shadow: 0 0 5px #0c3e19 inset;
+/*Styling for all buttons*/
+button {
+    font-family: "Story Script", sans-serif;
+    letter-spacing: 1vw;
+    /*addss slight spacing between the letters*/
+    font-size: 1.5vw;
+    /*Relative sizing of text*/
+    font-weight: bold;
+    padding: 1.5vw;
+    /*Adds padding to the text in the button*/
+    cursor: pointer;
+    width: 100%;
+    /*Sets the width of the buttons to 100% of their containers*/
+    height: auto;
+    /*Allows the height to be resized depending on the content showing*/
+    background-color: #456f45;
 }
+
+/*Hover effect for contact and submit buttons*/
+button:hover,
+.form-container .btn:hover {
+    color: #f0fdf0;
+    /*This makes the text in the buttons whites when hovered over*/
+    background-color: #32643f;
+    /*The background of the buttons changes to black when hovered over*/
+    transition-duration: 1s;
+    /*This makes the transition last 1 second*/
+    -webkit-transition-duration: 1s;
+    /*For Safaria 4.0 - 8.0*/
+    border-color: silver;
+    /*The border turns silver when the button is hover over*/
+}
+
+/*Submit button*/
+.form-container .btn {
+    background-color: #f0fdf0;
+    color: black;
+    border-color: #456f45;
+    margin-bottom: 1vh;
+    /*Adds spacr between the submit button and the close button*/
+}
+
+/*Close Button*/
+.form-container .cancel {
+    background-color: #0c3e19;
+    color: white;
+    border-color: gray;
+}
+
+/*Styling for close button on hover*/
+.form-container .cancel:hover {
+    color: white;
+    background-color: #456f45;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+
+/***End of the contact form styling***/
+
 
 /*Submit Button*/
 input[type=submit] {
@@ -470,3 +723,122 @@ form {
 label {
     color: #0c3e19;
 }
+
+/***Media Query Section***/
+/*Media Rukes for paragraph font size for different screen sizes*/
+
+/* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
+@media screen and (max-width: 576px) {
+    .column_1 {
+        overflow: auto;
+    }
+}
+
+
+@media screen and (max-width: 527px) {
+    p {
+        font-size: 3.75vw;
+    }
+}
+
+@media screen and (min-width: 528px) and (max-width:660px) {
+    p {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.75vw;
+    }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 2.5vw;
+    }
+
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 2.25vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 2vw;
+    }
+
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1.35vw;
+    }
+}
+
+/*These will be the Media rule for the navbar link for different screen sizes*/
+/*Screens 1080px and smaller will display navbar links equally distributed*/
+@media screen and (max-width: 1080px) {
+    .navbar a {
+        width: 20%;
+        /*This will set each navbar link to 1/5 of the navbar*/
+        font-size: 2.5vw;
+    }
+
+}
+
+/*Media Rules to enlarge the font of the white text for smaller screens*/
+@media screen and (max-width: 1080px) {
+    .quote {
+        font-size: 3.5vw;
+    }
+
+    .white-text {
+        font-size: 4.5vw;
+    }
+}
+
+/*Media rules to increase the size of the columns for larger screens*/
+@media screen and (min-width: 1725px) {
+    .column_1 {
+        height: 550px;
+    }
+
+    .column_2 {
+        height: 550px;
+    }
+}
+
+/*Media rule to remove*/
+@media screen and (min-width: 2000px) {
+    h1 {
+        margin-top: 0;
+    }
+
+}
+
+/*Quote card*/
+@media screen and (max-width:660px) {
+    .holographic-card:hover::before {
+        opacity: 1;
+        transform: rotate(-80deg) translateY(290%);
+    }
+}
+
+/***End of the Media query section***/
