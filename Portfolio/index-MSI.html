@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Yasmin Aguilera</title>
+    <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+</head>
+<!--Body-->
+
+<body class="background">
+
+    <!--Navbar-->
+    <div class="navbar">
+        <a class="active" href="#home">Home</a>
+        <!--New Section added-->
+        <a href="#slideshow">Slideshow</a>
+        <a href="#about">About</a>
+        <a href="#github">GitHub</a>
+        <!--Onclick and ondblclick functions added to open and close the contact form-->
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
+    </div>
+
+    <!--Background video-->
+    <div id="home">
+        <video autoplay muted loop id="typing_video">
+            <source src="image/video/Coding.mp4">
+            <!--Display message if video fails to run-->
+            Your browser does not support HTML5 Video
+        </video>
+    </div>
+
+    <!--Video text-->
+    <div class="video_text">
+        <div class="holographic-card">
+            <h1 class="white-text">Yasmin's Aguilera Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>
+                        We can be all poetic and just lose our minds together.
+                    </q>
+                    <br> - Riley from 'The Last of Us'
+                    <br>
+                    <br>Welcome to my Portfolio Website. With this I will tell you a little
+                    about me and my experience.
+                    <br>
+                    <br> Thank you for stopping by and enjoy!
+                </p>
+            </strong>
+        </div>
+    </div>
+
+    <!--New Slide Section-->
+    <div id="slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+
+                <!--Slide 1 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images Image" src="image/Yasmin A.A.jpg" alt="Picture of Yasmin A.A">
+                    <div class="text">I'm more than Happy to assist you on your projects!</div>
+                </div>
+
+                <!--Slide 2 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images Image" src="image/HTML_CSS_and_JavaScript.png"
+                        alt="The logos for HTML, CSS, AND JavaScript">
+                    <div class="text">I'm a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,
+                    </div>
+                </div>
+                <!--Slide 3 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images Image" src="image/Python-Logo.png" alt="Python Logo">
+                    <div class="text">The popular programming language Python,</div>
+                </div>
+                <!--Slide 4 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images Image" src="image/C_Sharp_and_Dot_NET.png" alt="C# Logo">
+                    <div class="text">C#, .NET Frameworkm ASP.NET, MVC, </div>
+                </div>
+                <!--Slide 5 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images Image" src="image/SQL_and_Database.jpg" alt="SQL logo">
+                    <div class="text">Back end development, databases and SQL.</div>
+                </div>
+                <!--Slide 6 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images Image" src="image/contact.jpg" alt="A person holding a phone">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Feel free to contact me!</a></div>
+                </div>
+                <!--Next and Previous Buttons-->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!--About Section-->
+    <div class="row" id="about">
+        <!--Left Column-->
+        <div class="column_2">
+            <img class="image" src="image/Playstation_Controller.jpg" alt="A PlaystationController on a desk">
+        </div>
+
+        <!--Right Column-->
+        <div class="column_1">
+            <h1>About</h1>
+            <p>
+                I'm Yasmin Aguilera, an aspiring software and game developer currently studying at The Tech Academy.
+                With this website, I will share my progress. I recently began my education in software development. For
+                years, I have admired the field of game development. I am learning several programming languages and am
+                eager to start creating games and websites.
+            </p>
+        </div>
+    </div>
+
+    <!--GitHub Section-->
+    <div class="row" id="github">
+        <!--Left Column-->
+        <div class="column_1">
+            <h1>GitHub</h1>
+            <p>If you are interested in seeing my projects, you can click here:
+                <br>
+            <p><a href="https://github.com/YassyAA-423/">My Tech Academy</a></p>
+            </p>
+        </div>
+
+        <!--Right Column-->
+        <div class="column_2">
+            <a href="https://github.com/YassyAA-423/" target="_blank"><img class="image" src="image/Github-logo.png"
+                    alt="GitHub Logo"></a>
+        </div>
+    </div>
+
+    =
+    <!--Contact form-->
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mblbadkq" method="POST" class="form-container">
+                <h1>Contact</h1>
+                <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Please Enter Your Name Here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Type Your Phone Number Here" name="phone">
+                <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Type Your Email Address Here" name="email" required>
+                <br><label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Please write your message here..." name="message">
+                
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <p>
+        <p class="center">&copy; Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/"
+                target="_blank">The Tech Academy</a></p>
+        </p>
+    </footer>
+    <script src="js/portfolio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+/* Font style Indie Flower and Story Script from fonts.google.com*/
+/*  font-family: "Indie Flower", cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/*  font-family: "Story Script", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+
+/*Colors 
+#f0fdf0 (light green)
+#fff (white)
+#0c3e19 (dark green
+rgba(2, 62, 25, 0.8) (dark green)
+rgba(14, 40, 22, 0.8) (forest green)
+#94b395 (muted green)
+#456f45 (swamp green)
+*/
+/*HTML*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*BODY*/
+body {
+    margin: 0;
+}
+
+/*H1 ELEMENTS*/
+h1 {
+    font-family: "Story Script", sans-serif;
+    /*This will turn all h1 to Story Script font*/
+    text-align: center;
+    /*This will center h1 elements*/
+    margin-top: 3%;
+    /*This will add a little margin above h1*/
+    color: #0c3e19;
+    transition: 1s ease-in;
+    /*This will make the hover effect ease in when the cursor goes away*/
+}
+
+
+/*H1 ELEMENTS HOVER EFFECT*/
+/****
+h1:hover {
+    filter: hue-rotate(90deg); /*This will make the h1 sepia
+    transform: scale(1.1); /*Will increase the size by 1.1 when hovered over
+    transition: 0.5s ease-in; /*This will make the hover effect ease in when the cursor goes over it
+}
+****/
+
+/*Styling for portfolio title text*/
+.white-text {
+    color: #fff;
+    /*This will make the text easier to read and better match the colors*/
+}
+
+/*paragraph elements*/
+p {
+    font-family: "Indie Flower", cursive;
+    /*font is from fonts.google*/
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 1s ease-in;
+    /*This will make the hover effect transition with the cursor goes away*/
+}
+
+.holographic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(14, 40, 22, 0.8);
+    overflow: hidden;
+}
+
+.holographic-card {
+    width: auto;
+    height: 400px;
+    background: rgba(14, 40, 22, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.holographic-card h2 {
+    color: rgb(186, 151, 26);
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,
+            transparent,
+            transparent 30%,
+            rgba(0, 255, 255, 0.3));
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.holographic-card:hover {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+    transform: rotate(-60deg) translateY(290%);
+}
+
+.center {
+    text-align: center;
+    /*Aligns the text to the center*/
+}
+
+/*Center class- will apply to all elements wih the class 'center'*/
+.center:hover {
+    transition: transform 2s;
+    /*Will make the transformation last 2s*/
+    transform: scale(1.1);
+    /*Will increase the size by 1.1 when hovered over*/
+}
+
+/*Anchor elements*/
+a {
+    color: #0c3e19;
+    /*This will turn all links green*/
+}
+
+/*Quotation elements*/
+q {
+    font-style: italic;
+    /*Makes the Quote italicized*/
+}
+
+/*image elements*/
+
+img {
+    filter: grayscale(75%);
+    /*This will rid 75% of the img color*/
+    border-radius: 8px;
+    /*Slightly rounds the corners*/
+    max-width: 100%;
+    /**/
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 1s ease-in;
+}
+
+img:hover {
+    filter: grayscale(5%);
+    /*Bring most of the img's color back when hover*/
+    transition: .8s ease-in;
+    /*Transition last for .8 second*/
+    transform: scale(1.1);
+    /*slightly increase the image when hovered */
+}
+
+
+/*Media to apply to different media.types of devices*/
+/*For screens 576px and smaller: the images will be 100px tall and vertically in the columns*/
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+
+/*Footer styling*/
+footer {
+    padding: 2%;
+    background-color: #94b395;
+}
+
+/*NAVBAR Styling*/
+.navbar {
+    overflow: hidden;
+    /*Will make sure that any contant that overflows beyond the Navbar boundary is not being showns*/
+    background-color: #456f45;
+    position: fixed;
+    /*keeps the navbar at the top of the screen*/
+    top: 0;
+    /* This ensures no space is displayed above the navbar */
+    width: 100%;
+    /* This makes the navbar span the entire width of the page */
+    z-index: 1;
+    /* This ensures other elements don't display over the navbar */
+    -webkit-animation: moveNav 5s;
+    /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
+    animation: moveNav 5s;
+    /* This applies the moveNav animation for all other browsers */
+}
+
+/*moveNavText animation effect for moving the narbar in from the left of the screen*/
+@keyframes moveNav {
+    from {
+        left: -100vw;
+    }
+
+    /* The navbar is starting off screen to the left */
+    to {
+        left: 0vw;
+    }
+
+    /* This moves the navbar into place on the screen */
+}
+
+/*Navbar link*/
+.navbar a {
+    float: left;
+    /* This specifies that the text floats on the left on the navbar */
+    display: block;
+    color: #f0fdf0;
+    padding: 14px 16px;
+    /* This adds padding around our text */
+    text-decoration: none;
+    /* This gets rid of the underlines under the text on our navbar */
+    font-family: "Story Script", sans-serif;
+    font-size: 20px;
+    /* This specifies the font size for text on our navbar */
+    text-align: center;
+    /* This centers the text within its container */
+    position: relative;
+    /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+    -webkit-animation: moveNavText 5.75s;
+    /* Animation for Safari 4.0 - 8.0 */
+    animation: moveNavText 5.75s;
+    /* Applies the moveNavText animation for 5.75s */
+}
+
+/**/
+@keyframes movNavText {
+    from {
+        top: -100vw;
+    }
+
+    /* The navbar is starting off screen to the left */
+    to {
+        top: 0vw;
+    }
+
+    /* This moves the navbar into place on the screen */
+}
+
+/*Screens 576px and smaller will display navbar links equally distributed*/
+@media screen and (max-width: 576px) {
+    .navbar a {
+        width: 25%;
+        font-size: 12px;
+    }
+}
+
+/*navbar hover effects*/
+.navbar a:hover {
+    background-color: #f0fdf0;
+    color: #0c3e19;
+    font-weight: bold;
+}
+
+
+/*Navbar home button*/
+.navbar a.active {
+    background-color: #94b395;
+}
+
+/*The END of NAVBAR STYLING*/
+
+
+/*Video styling*/
+/*Formatting for background video*/
+#typing_video {
+    position: fixed;
+    /* This fixes the video to the page */
+    right: 0;
+    /* This ensures there is no space between the edge of the video and the edge of the page */
+    bottom: 0;
+    /* This ensures no space between the bottom of the video and the bottom of the page */
+    min-width: 100%;
+    /* This ensures the video is displayed across the full width of the page */
+    z-index: -1;
+    /* This places the video behind the other elements on the page */
+}
+
+/*Screens that are 576px and smaller will not display the background video */
+@media screen and (max-width: 576px) {
+    #typing_video {
+        display: none;
+    }
+}
+
+/*text over the video*/
+.video_text {
+    background: rgba(14, 40, 22, 0.8);
+    color: #f0fdf0;
+    width: 100%;
+    /* Ensures the video-text container fills the width of the video */
+    padding: 20px;
+    /* This adds padding around the video-text container so that the background goes slightly beyond the text */
+    position: relative;
+    /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+    margin-top: 50px;
+}
+
+
+/* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
+@keyframes moveVideoText {
+    from {
+        top: -100vw;
+    }
+
+    /* This sets the position of the video text to above the viewport */
+    to {
+        top: 0vw;
+    }
+
+    /* This moves the video text to the normal positioning on the viewport */
+}
+
+/*END of Video styling*/
+/*Table styling-this section covers the styling of the columns and rows within the table*/
+/* The asterisk is a universal selector that applies this effect to all elements on the page */
+* {
+    box-sizing: border-box;
+    /* This creates a box with a border within which we will place most of our text */
+}
+
+
+.column_1 {
+    float: left;
+    width: 50%;
+    /* This ensures the column takes up half of the page width */
+    padding: 10px;
+    padding-top: 3%;
+    /* This ensures there is space between the top of the column and our headings */
+    height: 400px;
+    background-color: #f0fdf0;
+}
+
+/* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
+@media screen and (max-width: 576px) {
+    .column_1 {
+        overflow: auto;
+    }
+}
+
+.column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: rgba(2, 62, 25, 0.8);
+}
+
+
+.column_3 {
+    float: left;
+    width: 50%;
+    /* This ensures the column takes up half of the page width */
+    padding: 10px;
+    padding-top: 1.9%;
+    /* This ensures there is space between the top of the column and our headings */
+    height: 400px;
+    background-color: #f0fdf0;
+    padding-bottom: 30%;
+}
+
+
+.column_4 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    padding-bottom: 30%;
+    height: 400px;
+    background-color: rgba(2, 62, 25, 0.8);
+}
+
+/* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
+.column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+/* This inserts something after the content of selected elements (in this case the elements with class "Row") */
+.row::after {
+    content: "";
+    /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+    display: table;
+    /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+    clear: both;
+    /* This clears any other elements from floating on the left or the right of an element */
+}
+
+/*The END OF TABLE STYLING*/
+
+
+/*CONTACT STYLING*/
+input[type=text],
+input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: "Story Script", sans-serif;
+}
+
+input[type=text]:hover,
+input[type=email]:hover {
+    box-shadow: 0 0 5px #0c3e19 inset;
+}
+
+/*Submit Button*/
+input[type=submit] {
+    background-color: #0c3e19;
+    color: #f0fdf0;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Story Script", sans-serif;
+    transition: transform 1.5s;
+}
+
+input[type=submit]:hover {
+    background-color: #3d4a3d;
+    color: #94b395;
+    transform: scale(1.5);
+    transition: transform 1.5s;
+}
+
+form {
+    border-radius: 5px;
+    background-color: #94b395;
+    padding: 10px;
+    font-family: "Story Script", sans-serif;
+    margin-bottom: -15px;
+}
+
+label {
+    color: #0c3e19;
+}
