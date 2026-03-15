@@ -82,7 +82,6 @@ p {
     overflow: hidden;
     border-radius: 15px;
     transition: all 0.5s ease;
-    padding-top: 20px;
     padding-bottom: 40px;
 }
 
@@ -522,11 +521,23 @@ footer {
 
 .column_2 {
     float: left;
-    width: 50%;
+    text-align: center;
     padding: 10px;
     padding-top: 1.9%;
+    width: 50%; 
     height: 400px;
     background-color: rgba(2, 62, 25, 0.8);
+}
+
+.column_3 {
+    float: left;
+    width: 50%;
+    /* This ensures the column takes up half of the page width */
+    padding-top: 7px;
+    padding-right: -100;
+    /* This ensures there is space between the top of the column and our headings */
+    height: 400px;
+    background-color: #f0fdf0;
 }
 
 
