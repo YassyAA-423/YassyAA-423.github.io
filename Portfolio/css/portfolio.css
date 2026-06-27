@@ -54,9 +54,24 @@ p {
     /*font is from fonts.google*/
     text-align: justify;
     letter-spacing: 1px;
-    font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+    transition: 1s ease-in;
+    /*This will make the hover effect transition with the cursor goes away*/
+}
+
+
+.card_p {
+    font-family: "Indie Flower", cursive;
+    /*font is from fonts.google*/
+     text-align: center;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
     transition: 1s ease-in;
     /*This will make the hover effect transition with the cursor goes away*/
 }
@@ -82,8 +97,6 @@ p {
     overflow: hidden;
     border-radius: 15px;
     transition: all 0.5s ease;
-    padding-top: 20px;
-    padding-bottom: 40px;
 }
 
 .holographic-card h2 {
@@ -116,7 +129,7 @@ p {
 
 .holographic-card:hover::before {
     opacity: 1;
-    transform: rotate(-60deg) translateY(290%);
+    transform: rotate(-58deg) translateY(293%);
 }
 
 .center {
@@ -157,6 +170,7 @@ q {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
     transition: 1s ease-in;
 }
 
@@ -516,7 +530,7 @@ footer {
     padding: 10px;
     padding-top: 3%;
     /* This ensures there is space between the top of the column and our headings */
-    height: 400px;
+    height: 500px;
     background-color: #f0fdf0;
 }
 
@@ -526,7 +540,7 @@ footer {
     padding: 10px;
     padding-top: 1.9%;
     width: 50%; 
-    height: 400px;
+    height: 500px;
     background-color: rgba(2, 62, 25, 0.8);
 }
 
@@ -537,7 +551,7 @@ footer {
     padding-top: 7px;
     padding-right: -100;
     /* This ensures there is space between the top of the column and our headings */
-    height: 400px;
+    height: 500px;
     background-color: #f0fdf0;
 }
 
