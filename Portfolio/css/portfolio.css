@@ -54,6 +54,7 @@ p {
     /*font is from fonts.google*/
     text-align: justify;
     letter-spacing: 1px;
+    font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: 20px;
@@ -97,6 +98,8 @@ p {
     overflow: hidden;
     border-radius: 15px;
     transition: all 0.5s ease;
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 .holographic-card h2 {
@@ -129,7 +132,7 @@ p {
 
 .holographic-card:hover::before {
     opacity: 1;
-    transform: rotate(-58deg) translateY(293%);
+    transform: rotate(-60deg) translateY(290%);
 }
 
 .center {
@@ -170,7 +173,6 @@ q {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
     transition: 1s ease-in;
 }
 
@@ -530,31 +532,18 @@ footer {
     padding: 10px;
     padding-top: 3%;
     /* This ensures there is space between the top of the column and our headings */
-    height: 500px;
+    height: 400px;
     background-color: #f0fdf0;
 }
 
 .column_2 {
     float: left;
-    text-align: center;
+    width: 50%;
     padding: 10px;
     padding-top: 1.9%;
-    width: 50%; 
-    height: 500px;
+    height: 400px;
     background-color: rgba(2, 62, 25, 0.8);
 }
-
-.column_3 {
-    float: left;
-    width: 50%;
-    /* This ensures the column takes up half of the page width */
-    padding-top: 7px;
-    padding-right: -100;
-    /* This ensures there is space between the top of the column and our headings */
-    height: 500px;
-    background-color: #f0fdf0;
-}
-
 
 /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
 .row::after {
