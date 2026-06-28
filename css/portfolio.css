@@ -54,7 +54,6 @@ p {
     /*font is from fonts.google*/
     text-align: justify;
     letter-spacing: 1px;
-    font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: 20px;
@@ -62,7 +61,6 @@ p {
     transition: 1s ease-in;
     /*This will make the hover effect transition with the cursor goes away*/
 }
-
 
 .card_p {
     font-family: "Indie Flower", cursive;
@@ -75,7 +73,7 @@ p {
     margin-right: 30px;
     transition: 1s ease-in;
     /*This will make the hover effect transition with the cursor goes away*/
-}
+}s
 
 .holographic-container {
     display: flex;
@@ -98,7 +96,6 @@ p {
     overflow: hidden;
     border-radius: 15px;
     transition: all 0.5s ease;
-    padding-top: 20px;
     padding-bottom: 40px;
 }
 
@@ -132,7 +129,7 @@ p {
 
 .holographic-card:hover::before {
     opacity: 1;
-    transform: rotate(-60deg) translateY(290%);
+    transform: rotate(-58deg) translateY(293%);
 }
 
 .center {
@@ -173,6 +170,7 @@ q {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
     transition: 1s ease-in;
 }
 
@@ -188,9 +186,55 @@ q {
 /*Slideshow images*/
 .Image{
     width: 600px !important;
-    height: 617px !important;
+    height: 500px !important;
     border-radius: 0px 0px 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
+
+
+.Image1{
+    width: 600px !important;
+    height: 500px !important;
+    border-radius: 0px 0px 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+
+.Image2{
+    width: 600px !important;
+    height: 500px !important;
+    border-radius: 0px 0px 7px 7px;
+    padding-bottom: 150px;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.Image3{
+    width: 600px !important;
+    height: 500px !important;
+    border-radius: 0px 0px 7px 7px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.Image4{
+    width: 600px !important;
+    height: 500px !important;
+    border-radius: 0px 0px 7px 7px;
+    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+
 
 /*Media to apply to different media.types of devices*/
 /*For screens 576px and smaller: the images will be 100px tall and vertically in the columns*/
@@ -373,8 +417,6 @@ footer {
     /*Relative sizing of the container for the slideshow set 39.5 of the viewport width*/
     height: auto;
     /*The height of the container is auto adjusted based on the content it is displaying*/
-    padding-top: 4%;
-    /*Adds a small padding to the top of the slideshow container*/
     position: relative;
     /*Thie sets the container relative to its normal positioning*/
     margin: auto;
@@ -388,13 +430,9 @@ footer {
 
 /*Images contained within the slideshow*/
 .Slideshow_Images {
-    /*This will center the images vertically with the slideshow container*/
-    height: auto;
     /*Height of the images is auto adjusted based on the content, ie if your images are different sizes, they will display as different sizes*/
     box-shadow: 0px 5px 10px 12px rgba(14, 40, 22, 0.8);
     /*Adds a shadow around the slideshow images*/
-    width: 100%;
-    /*The width of the images is auto adjusted based on the content*/
     background-color: #94b395;
       filter: grayscale(65%);
     /*This will rid 75% of the img color*/
@@ -532,18 +570,31 @@ footer {
     padding: 10px;
     padding-top: 3%;
     /* This ensures there is space between the top of the column and our headings */
-    height: 400px;
+    height: 500px;
     background-color: #f0fdf0;
 }
 
 .column_2 {
     float: left;
-    width: 50%;
+    text-align: center;
     padding: 10px;
     padding-top: 1.9%;
-    height: 400px;
+    width: 50%; 
+    height: 500px;
     background-color: rgba(2, 62, 25, 0.8);
 }
+
+.column_3 {
+    float: left;
+    width: 50%;
+    /* This ensures the column takes up half of the page width */
+    padding-top: 7px;
+    padding-right: -100;
+    /* This ensures there is space between the top of the column and our headings */
+    height: 500px;
+    background-color: #f0fdf0;
+}
+
 
 /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
 .row::after {
